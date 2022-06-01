@@ -1,5 +1,7 @@
 # Audio Processor - COMP4431 Lab/Project
 
+Lab/Project assignment for COMP4431, Spring 2022.
+
 Basic framework and UI provided by COMP4431 teaching team.
 
 Individual Lab Work:
