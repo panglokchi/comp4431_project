@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -402,9 +403,35 @@
                                     </select>
                                 </div>
                                 <div class="col-3">
+                                    <label for="karplus-input-type">Input type:</label>
+                                    <select class="custom-select" id="karplus-input-type">
+                                        <option value="desire-decay-time" id="karplus-select-desire-decay-time">Desire Decay Time</option>
+                                        <option value="stretch-factor" id="karplus-select-stretch-factor">Stretch Factor</option>
+                                        <option value="decay-factor" id="karplus-select-decay-factor">Decay Factor</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
                                     <label for="karplus-p"><i>p</i>:</label>
                                     <div class="input-group">
                                         <input class="form-control" id="karplus-p" type="number" value="100" min="5" step="1">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <label for="karplus-desire-decay-time">Decay Time (seconds):</label>
+                                    <div class="input-group">
+                                        <input class="form-control" id="karplus-desire-decay-time" type="number" value="6" min="0" step="0.01">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <label for="karplus-decay">Decay Factor (≤1):</label>
+                                    <div class="input-group">
+                                        <input class="form-control" id="karplus-decay" type="number" value="1" min="0" max="1" step="0.000001" disabled="true">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <label for="karplus-stretch">Stretch Factor (≥1):</label>
+                                    <div class="input-group">
+                                        <input class="form-control" id="karplus-stretch" type="number" value="1" min="1" step="1" disabled="true">
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -419,7 +446,16 @@
                                         <input class="form-control" id="karplus-b" type="number" value="1" min="0" step="0.01">
                                     </div>
                                 </div>
+								<div class="col">
+                                    <label for="karplus-samples">Sample sounds:</label><br>
+                                    <div class="btn-group" role="group" aria-label="Basic example" id="karplus-sample">
+										<button id="sample-1" type="button" class="btn btn-primary">Sample 1<br>Stretch Factor = 2</button>
+										<button id="sample-2" type="button" class="btn btn-primary">Sample 2<br>Decay Factor = 0.99</button>
+										<button id="sample-3" type="button" class="btn btn-primary">Sample 3<br>Decay Time = 6s</button>
+									</div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
 

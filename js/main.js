@@ -270,4 +270,40 @@ $(document).ready(function() {
 
     // Import MIDI (in JSON format)
     $("#btnImportMIDI").on("click", importMIDI);
+	
+	$("#karplus-input-type").on('change', function() {
+		var select_type = $("#karplus-input-type>option:selected").val();    // decay time, decay factor, stretch factor
+		if(select_type == "desire-decay-time") {
+		  $('#karplus-stretch').prop('disabled', true);
+		  $('#karplus-decay').prop('disabled', true);
+		  $('#karplus-desire-decay-time').prop('disabled', false);
+		}else if(select_type == "stretch-factor") {
+		  $('#karplus-desire-decay-time').prop('disabled', true);
+		  $('#karplus-decay').prop('disabled', true);
+		  $('#karplus-stretch').prop('disabled', false);
+		}else if(select_type == "decay-factor") {
+		  $('#karplus-stretch').prop('disabled', true);
+		  $('#karplus-desire-decay-time').prop('disabled', true);
+		  $('#karplus-decay').prop('disabled', false);
+		}
+	});
+	$("#sample-1").on("click", function() {
+		document.getElementById("karplus-input-type").value = "stretch-factor";
+		document.getElementById("karplus-stretch").value = 2;
+		document.getElementById("karplus-decay").value = 1;
+		$("#karplus-decay").change();
+	});
+	$("#sample-2").on("click", function() {
+		document.getElementById("karplus-input-type").value = "decay-factor";
+		document.getElementById("karplus-stretch").value = 1;
+		document.getElementById("karplus-decay").value = 0.99;
+		$("#karplus-decay").change();
+	});
+	$("#sample-3").on("click", function() {
+		document.getElementById("karplus-input-type").value = "desire-decay-time";
+		document.getElementById("karplus-stretch").value = 1;
+		document.getElementById("karplus-decay").value = 1;
+		document.getElementById("karplus-desire-decay-time").value = 6;
+		$("#karplus-decay").change();
+	});
 });
