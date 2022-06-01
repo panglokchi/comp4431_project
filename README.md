@@ -1,4 +1,4 @@
-# comp4431_project - Audio Processor
+# Audio Processor - COMP4431 Lab/Project
 
 Basic framework and UI provided by COMP4431 teaching team.
 
